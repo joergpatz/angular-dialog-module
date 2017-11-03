@@ -1,0 +1,14 @@
+<app-dialog-abstract #parentModal
+                 [modalId]="modalId"
+                 [messageType]="messageType"
+                 [title]="title"
+                 (close)="onClose()">
+  <main class="modal__content" id="modal_main" [formGroup]="form">
+    <p [innerHTML]="body"></p>
+    <input type="text" formControlName="inputField">
+  </main>
+  <footer class="modal__footer">
+    <button class="modal__btn modal__btn-primary" (click)="onSend()">{{ labels.send }}</button>
+    <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window" (click)="onClose()">{{ labels.close }}</button>
+  </footer>
+</app-dialog-abstract>
