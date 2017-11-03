@@ -24,7 +24,7 @@ export class DialogInputComponent implements OnInit, IDialog {
 
   @Output() clickStream$: EventEmitter<IDialogResponse> = new EventEmitter<IDialogResponse>();
 
-  private form: FormGroup;
+  form: FormGroup;
   private dialogResponse: IDialogResponse;
 
   constructor(private injector: Injector,

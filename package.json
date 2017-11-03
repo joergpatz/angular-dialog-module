@@ -1,13 +1,13 @@
 {
-  "name": "my-app",
+  "name": "angular-dialog-module",
   "version": "0.0.0",
   "description": "Dynamically creating Components with Dialog Module",
   "author": "Joerg Patzer",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "serve dist/ --single",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -45,6 +45,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "serve": "^6.4.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"

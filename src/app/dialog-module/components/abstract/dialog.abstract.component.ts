@@ -32,7 +32,7 @@ export class DialogAbstractComponent implements OnInit, AfterViewInit, IDialog {
 
   @Output() close: EventEmitter<any> = new EventEmitter();
 
-  private messageTypeClass: string;
+  messageTypeClass: string;
 
   ngOnInit(): void {
     this.messageTypeClass = DIALOG_MESSAGE_TYPE[this.messageType].toLowerCase();
