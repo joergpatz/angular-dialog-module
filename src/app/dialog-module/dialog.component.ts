@@ -15,7 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { IDialogLabels, IDialogData, IDialogResponse, DIALOG_MESSAGE_TYPE } from './dialog.interface';
 import { DialogService } from './dialog.service';
 import { DialogDefaultComponent } from './components/dialog.default.component';
-import { mergeDeep } from '../utils/merge-deep/merge-deep.utils';
+import { mergeDeep } from './utils/merge-deep/merge-deep.utils';
 
 
 // default dialog options

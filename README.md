@@ -1,8 +1,10 @@
 # MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This Demo project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
 Clone and `npm install`
+
+You can copy or download the dialog-module from the src/app/dialog-module directory and integrate in your project.
 
 ## Schema
 
