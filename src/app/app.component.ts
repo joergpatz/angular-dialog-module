@@ -53,6 +53,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.dialogService.emitDialog({
       inputs: {
         modalId: 'default-dialog',
+        title: `Micromodal.js 🔥`,
         body: `Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself.
               Also, <code>esc</code> to close modal.`
       }
@@ -66,8 +67,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       component: DialogInputComponent,
       inputs: {
         modalId: 'input-dialog',
-        body: `Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself.
-              Also, <code>esc</code> to close modal.`
+        title: `Micromodal.js 🔥`,
+        body: `You can see the user's input feedback as <code>console.log</code> output in your browser developer tools.`
       }
     }).subscribe(choice => {
       if (choice.leavingType === DIALOG_LEAVING_TYPE.CONFIRM) {
