@@ -29,13 +29,12 @@ export class DialogInputComponent implements OnInit, IDialog {
 
   constructor(private injector: Injector,
               private formBuilder: FormBuilder) {
-    // see: https://codecraft.tv/courses/angular/dependency-injection-and-providers/tokens/
-    this.modalId      = this.injector.get('modalId');
-    this.messageType = this.injector.get('messageType');
-    this.title        = this.injector.get('title');
-    this.body         = this.injector.get('body');
-    this.labels       = this.injector.get('labels');
-    this.icons        = this.injector.get('icons');
+    this.modalId      = this.injector.get<string>(<any>'modalId');
+    this.messageType  = this.injector.get<DIALOG_MESSAGE_TYPE>(<any>'messageType');
+    this.title        = this.injector.get<string>(<any>'title');
+    this.body         = this.injector.get<SafeHtml|string>(<any>'body');
+    this.labels       = this.injector.get<IDialogLabels>(<any>'labels');
+    this.icons        = this.injector.get<Object>(<any>'icons');
 
     this.dialogResponse = {
       modalId: this.modalId
