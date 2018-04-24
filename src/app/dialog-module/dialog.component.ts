@@ -5,7 +5,6 @@ import {
   Input,
   ViewChild,
   ViewContainerRef,
-  ReflectiveInjector,
   EventEmitter,
   HostListener,
   SecurityContext,
@@ -83,10 +82,10 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.dialogService
-      .getDestroyCommandStream()
-      .subscribe((id: string) => {
-        this.destroyComponentRef(id);
-      });
+    .getDestroyCommandStream()
+    .subscribe((id: string) => {
+      this.destroyComponentRef(id);
+    });
   }
 
   @HostListener('window:hashchange', ['$event'])
@@ -111,7 +110,7 @@ export class DialogComponent implements OnInit {
     const staticProviders = Object.keys(version.inputs).map((inputName) => {
       return {provide: inputName, useValue: version.inputs[inputName], deps: []};
     });
-    const options = { providers: staticProviders, parent: this.dialogAnchor.parentInjector, name: 'test'};
+    const options = {providers: staticProviders, parent: this.dialogAnchor.parentInjector};
     const injector = Injector.create(options);
 
     // Create a factory out of the component we want to create

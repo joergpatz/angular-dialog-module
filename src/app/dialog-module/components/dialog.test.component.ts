@@ -10,7 +10,7 @@ import {
 import { SafeHtml } from '@angular/platform-browser';
 
 import { DIALOG_LEAVING_TYPE, DIALOG_MESSAGE_TYPE, IDialog, IDialogLabels, IDialogResponse } from '../dialog.interface';
-import { Token } from '@angular/compiler';
+
 
 @Component({
   template: `
