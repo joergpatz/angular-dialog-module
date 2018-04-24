@@ -108,15 +108,10 @@ export class DialogComponent implements OnInit {
     const version: IDialogData = mergeDeep(blueprint, data);
 
     // Inputs need to be in the following format to be resolved properly
-    const inputProviders = Object.keys(version.inputs).map((inputName) => {
+    const staticProviders = Object.keys(version.inputs).map((inputName) => {
       return {provide: inputName, useValue: version.inputs[inputName], deps: []};
     });
-    // const resolvedInputs = ReflectiveInjector.resolve(inputProviders);
-
-    // Create an injector out of the data we want to pass down and this components injector (constructor parameter)
-    // const injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.dialogAnchor.parentInjector);
-
-    const options = { providers: inputProviders, parent: this.dialogAnchor.parentInjector, name: 'test'};
+    const options = { providers: staticProviders, parent: this.dialogAnchor.parentInjector, name: 'test'};
     const injector = Injector.create(options);
 
     // Create a factory out of the component we want to create
